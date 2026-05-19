@@ -23,6 +23,10 @@
 
 <main class="container py-5">
     <section class="hero-card p-5 rounded-4 border shadow-sm">
+        <img th:src="@{/images/logo.png}"
+             alt="Logo"
+             width="80"
+             class="mb-3">
         <h1 class="display-5 fw-bold" th:text="${welcomeMessage}">
             Добро пожаловать
         </h1>
