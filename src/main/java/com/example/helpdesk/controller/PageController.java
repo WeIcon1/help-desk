@@ -19,14 +19,7 @@ public class PageController {
                 "Добро пожаловать в Help Desk"
         );
 
-        model.addAttribute(
-                "features",
-                List.of(
-                        "Регистрация обращений",
-                        "Приоритизация задач",
-                        "Контакты поддержки"
-                )
-        );
+
         model.addAttribute("features", List.of(
                 "Регистрация обращений",
                 "Приоритизация задач",
@@ -48,7 +41,9 @@ public class PageController {
     public String contacts(Model model) {
 
         model.addAttribute("pageTitle", "Контакты");
+        model.addAttribute("supportEmail", "support@helpdesk.local");
+        model.addAttribute("phone", "+7 (000) 000-00-00");
+        model.addAttribute("workTime", "Пн-Пт, 09:00-18:00");
 
         return "contacts";
-    }
-}
+    } }
