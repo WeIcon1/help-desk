@@ -46,10 +46,5 @@ public class PageController {
         return "contacts";
     }
 
-    @GetMapping("/tickets")
-    public String getTickets(Model model) {
-        List<Ticket> tickets = ticketService.getAllTickets();
-        model.addAttribute("tickets", tickets);
-        return "tickets";
-    }
-    }
+
+}
