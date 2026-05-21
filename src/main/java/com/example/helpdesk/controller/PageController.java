@@ -41,7 +41,7 @@ public class PageController {
     public String contacts(Model model) {
         model.addAttribute("pageTitle", "Контакты");
         model.addAttribute("supportEmail", "support@helpdesk.local");
-        model.addAttribute("phone", "+7 (000) 000-00-00");
+        model.addAttribute("phone", "+7 (925) 635-40-12");
         model.addAttribute("workTime", "Пн-Пт, 09:00-18:00");
         return "contacts";
     }
