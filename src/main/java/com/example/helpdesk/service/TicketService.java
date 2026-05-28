@@ -1,25 +1,16 @@
 package com.example.helpdesk.service;
 
+import com.example.helpdesk.dto.TicketCreateDto;
 import com.example.helpdesk.model.Ticket;
-import com.example.helpdesk.repository.TicketRepository;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
-public class TicketService {
+public interface TicketService {
 
-    private final TicketRepository ticketRepository;
+    Ticket createTicket(TicketCreateDto ticketCreateDto);
 
-    public TicketService(TicketRepository ticketRepository) {
-        this.ticketRepository = ticketRepository;
-    }
+    List<Ticket> getAllTickets();
 
-    public List<Ticket> getAllTickets() {
-        return ticketRepository.findAll();
-    }
-
-    public Ticket saveTicket(Ticket ticket) {
-        return ticketRepository.save(ticket);
-    }
+    Ticket getTicketById(Long id);
 }
+
