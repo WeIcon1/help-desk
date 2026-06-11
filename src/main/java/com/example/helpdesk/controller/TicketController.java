@@ -25,12 +25,8 @@ public class TicketController {
 
 
     @GetMapping
-    public String tickets(Model model) {
-
-        model.addAttribute("tickets",
-                ticketService.getAllTickets());
-
-        return "tickets";
+    public String tickets() {
+        return "redirect:/admin/tickets";
     }
 
 
