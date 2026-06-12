@@ -24,7 +24,7 @@ public class PageController {
         model.addAttribute("welcomeMessage", "Добро пожаловать в Help Desk");
         model.addAttribute("features", List.of(
                 "Регистрация обращений",
-                "О нас ",
+                "Приоритизация задач ",
                 "Контакты поддержки",
                 "База знаний"
         ));
