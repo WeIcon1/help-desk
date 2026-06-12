@@ -21,9 +21,7 @@
             <a class="nav-link" th:href="@{/contacts}">Контакты</a>
             <a class="nav-link" th:href="@{/tickets}">Заявки</a>
             <a class="nav-link" th:href="@{/admin/tickets}">Админ-панель</a>
-            <a th:href="@{/login}" class="btn btn-primary btn-lg">
-                Войти как администратор
-            </a>
+
         </div>
     </div>
 </nav>
@@ -31,7 +29,9 @@
 <a th:href="@{/tickets/new}" class="btn btn-primary btn-lg ms-3 mt-3 ">
     Создать заявку
 </a>
-
+<a th:href="@{/login}" class="btn btn-primary btn-lg ms-3 mt-3 ">
+    Войти как администратор
+</a>
 <main class="container py-5">
     <section class="hero-card p-5 rounded-4 border shadow-sm">
         <img th:src="@{/images/logo.png}"
@@ -49,18 +49,38 @@
         </a>
     </section>
 
-    <section class="row g-4 mt-4">
+    <div class="row g-4 mt-4">
         <div class="col-md-4" th:each="feature : ${features}">
             <div class="card h-100 shadow-sm">
                 <div class="card-body">
-                    <h2 class="h5" th:text="${feature}">Функция</h2>
+
+                    <h2 class="h5" th:text="${feature}">
+                        Функция
+                    </h2>
+
                     <p class="card-text text-muted">
                         Этот блок создан на основе данных, переданных из контроллера.
                     </p>
+
+                    <!-- База знаний -->
+                    <a th:if="${feature == 'База знаний'}"
+                       th:href="@{/faq}"
+                       class="btn btn-primary">
+                        Перейти
+                    </a>
+
+                    <!-- Контакты поддержки -->
+                    <a th:if="${feature == 'Контакты поддержки'}"
+                       th:href="@{/contacts}"
+                       class="btn btn-primary">
+                        Перейти
+                    </a>
+
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+    </div>
 </main>
 
 <footer class="footer py-4 border-top">

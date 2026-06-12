@@ -24,7 +24,7 @@ public class PageController {
         model.addAttribute("welcomeMessage", "Добро пожаловать в Help Desk");
         model.addAttribute("features", List.of(
                 "Регистрация обращений",
-                "Приоритизация задач",
+                "О нас ",
                 "Контакты поддержки",
                 "База знаний"
         ));
@@ -36,7 +36,17 @@ public class PageController {
         model.addAttribute("pageTitle", "О нас");
         return "about";
     }
-
+    @GetMapping("/faq")
+    public String faq(Model model) {
+        model.addAttribute("pageTitle", "База знаний");
+        model.addAttribute("faqList", List.of(
+                "Что делаешь?",
+                "Как дела?",
+                "Ваня, давай напишем лабораторку?",
+                "Кто это читает?"
+        ));
+        return "faq";
+    }
     @GetMapping("/contacts")
     public String contacts(Model model) {
         model.addAttribute("pageTitle", "Контакты");
